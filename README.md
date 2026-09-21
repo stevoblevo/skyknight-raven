@@ -5,6 +5,8 @@ Meet Sae’s fragments. Do not collect them. Watch the play, or walk it.
 
 **Peachfall (princess) stays at** [forest-mist-zest-civic.grok.me](https://forest-mist-zest-civic.grok.me). This repo is a separate game.
 
+**Play:** [stevoblevo.github.io/skyknight-raven](https://stevoblevo.github.io/skyknight-raven/)
+
 ## Play locally
 
 ```bash

@@ -3,6 +3,13 @@
 This is the **knight side**. Do not deploy it over Peachfall
 (`https://forest-mist-zest-civic.grok.me`).
 
+## Play now
+
+- Source: [github.com/stevoblevo/skyknight-raven](https://github.com/stevoblevo/skyknight-raven)
+- GitHub Pages: [stevoblevo.github.io/skyknight-raven](https://stevoblevo.github.io/skyknight-raven/)
+- Vercel (skein): import the repo at [vercel.com/new](https://vercel.com/new/git/external?repository-url=https://github.com/stevoblevo/skyknight-raven)  
+  (Vercel’s GitHub App must be allowed on this repo — until then Pages is the public URL.)
+
 ## tower.local (Docker)
 
 ```bash
@@ -15,10 +22,14 @@ docker compose up --build -d
 
 Stop: `docker compose down`
 
-## Vercel
-
-Repo: push this tree, then import `skyknight-raven` on Vercel (framework: Vite / TanStack Start). Build command is `npm run build`.
+Image listens on **8088** so it never collides with Peachfall or Grok preview (8080).
 
 ## GitHub Pages
 
-This app is SSR (TanStack Start + Nitro). GitHub Pages is static-only, so it is a poor fit. Use Vercel or the Docker image instead.
+Push to `main`. `.github/workflows/pages.yml` builds a static SPA with
+`VITE_BASE=/skyknight-raven/` and deploys it.
+
+## Vercel
+
+Framework: **TanStack Start**. Build: `npm run build`. Env: `VITE_AUTH_ENABLED=false`.
+Nitro preset stays `vercel` unless you set `NITRO_PRESET`.

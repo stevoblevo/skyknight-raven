@@ -1,4 +1,5 @@
 import { Clapperboard, Eye, Heart, Shield, Sparkles } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 function StartOverlay({
   onEnter,
@@ -12,7 +13,7 @@ function StartOverlay({
   return (
     <div className="absolute inset-0 z-20 overflow-y-auto overscroll-contain">
       <img
-        src="/anewgam/concept.png"
+        src={asset("anewgam/concept.png")}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />

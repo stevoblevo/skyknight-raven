@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { asset } from "@/lib/asset";
 import { FRAGMENTS } from "./fragments";
 
 export type WorldBits = {
@@ -17,19 +18,19 @@ export type WorldBits = {
 };
 
 const VISTAS = [
-  "/anewgam/vista-castle.jpg",
-  "/anewgam/vista-meadow.jpg",
-  "/anewgam/vista-arch.jpg",
-  "/anewgam/vista-lanterns.jpg",
-  "/anewgam/vista-terraces.jpg",
-  "/anewgam/vista-portal.jpg",
-  "/anewgam/vista-lake.jpg",
-  "/anewgam/vista-garden.jpg",
-  "/anewgam/vista-isles.jpg",
-  "/anewgam/vista-orchard.jpg",
-  "/anewgam/vista-stars.jpg",
-  "/anewgam/vista-wong.jpg",
-];
+  "anewgam/vista-castle.jpg",
+  "anewgam/vista-meadow.jpg",
+  "anewgam/vista-arch.jpg",
+  "anewgam/vista-lanterns.jpg",
+  "anewgam/vista-terraces.jpg",
+  "anewgam/vista-portal.jpg",
+  "anewgam/vista-lake.jpg",
+  "anewgam/vista-garden.jpg",
+  "anewgam/vista-isles.jpg",
+  "anewgam/vista-orchard.jpg",
+  "anewgam/vista-stars.jpg",
+  "anewgam/vista-wong.jpg",
+].map(asset);
 
 export function createSky(): THREE.Mesh {
   const geo = new THREE.SphereGeometry(140, 24, 16);
@@ -153,7 +154,7 @@ export function createWorld(scene: THREE.Scene, ramp: THREE.Texture, quality: "h
   });
 
   const loader = new THREE.TextureLoader();
-  const grassTex = loader.load("/anewgam/grass.jpg");
+  const grassTex = loader.load(asset("anewgam/grass.jpg"));
   grassTex.wrapS = THREE.RepeatWrapping;
   grassTex.wrapT = THREE.RepeatWrapping;
   grassTex.repeat.set(16, 16);
@@ -161,7 +162,7 @@ export function createWorld(scene: THREE.Scene, ramp: THREE.Texture, quality: "h
   grass.map = grassTex;
   grass.color = new THREE.Color(0xf4ead8);
 
-  const stoneTex = loader.load("/anewgam/stone.jpg");
+  const stoneTex = loader.load(asset("anewgam/stone.jpg"));
   stoneTex.wrapS = THREE.RepeatWrapping;
   stoneTex.wrapT = THREE.RepeatWrapping;
   stoneTex.colorSpace = THREE.SRGBColorSpace;

@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 type Line = { speaker: string; text: string; portrait: string };
 
 export type WatchPose = "stand" | "kneel" | "sit";
@@ -18,7 +20,7 @@ export type WatchDrive = {
   looped: boolean;
 };
 
-const PORTRAIT = "/anewgam/sae-portrait.jpg";
+const PORTRAIT = asset("anewgam/sae-portrait.jpg");
 
 export const WATCH_STEPS: WatchStep[] = [
   {
@@ -45,7 +47,7 @@ export const WATCH_STEPS: WatchStep[] = [
     t: "go",
     x: 6.4,
     z: -5.4,
-    line: { speaker: "Playful", text: "Catch me — then stop.", portrait: "/anewgam/frag-playful.jpg" },
+    line: { speaker: "Playful", text: "Catch me — then stop.", portrait: asset("anewgam/frag-playful.jpg") },
   },
   { t: "hold", hold: 2.6 },
   { t: "go", x: -8.2, z: -2.8 },
@@ -53,21 +55,21 @@ export const WATCH_STEPS: WatchStep[] = [
     t: "hold",
     pose: "kneel",
     hold: 3.4,
-    line: { speaker: "Shy", text: "Kneel. Wait. Don't look too hard.", portrait: "/anewgam/frag-shy.jpg" },
+    line: { speaker: "Shy", text: "Kneel. Wait. Don't look too hard.", portrait: asset("anewgam/frag-shy.jpg") },
   },
   { t: "go", x: 4.8, z: 5.2, pose: "stand" },
   {
     t: "hold",
     pose: "sit",
     hold: 3.5,
-    line: { speaker: "Crying", text: "Sit with her. The feeling can stay.", portrait: "/anewgam/frag-crying.jpg" },
+    line: { speaker: "Crying", text: "Sit with her. The feeling can stay.", portrait: asset("anewgam/frag-crying.jpg") },
   },
   { t: "go", x: -4.2, z: -15.0, pose: "stand" },
   {
     t: "hold",
     dream: true,
     hold: 3.4,
-    line: { speaker: "Singing", text: "Listen. Three notes in the dusk.", portrait: "/anewgam/frag-singing.jpg" },
+    line: { speaker: "Singing", text: "Listen. Three notes in the dusk.", portrait: asset("anewgam/frag-singing.jpg") },
   },
   { t: "go", x: 9.4, z: -19.2, pose: "kneel" },
   {
@@ -77,7 +79,7 @@ export const WATCH_STEPS: WatchStep[] = [
     line: {
       speaker: "Mischievous",
       text: "Sneak. Walking startles the fragments.",
-      portrait: "/anewgam/frag-mischief.jpg",
+      portrait: asset("anewgam/frag-mischief.jpg"),
     },
   },
   { t: "go", x: 0.2, z: -11.5, pose: "stand" },
@@ -86,7 +88,7 @@ export const WATCH_STEPS: WatchStep[] = [
     pitch: 0.38,
     yaw: 0,
     hold: 5.2,
-    line: { speaker: "Sae", text: "Steven… I made it farther this time.", portrait: "/anewgam/sae-adult.jpg" },
+    line: { speaker: "Sae", text: "Steven… I made it farther this time.", portrait: asset("anewgam/sae-adult.jpg") },
   },
 ];
 

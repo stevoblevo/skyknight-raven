@@ -3,6 +3,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { asset } from "@/lib/asset";
 import { SoftAudio } from "./audio";
 import {
   createAdultSae,
@@ -72,13 +73,13 @@ function wrapDelta(a: number, b: number): number {
 const SAE_LINE: Line = {
   speaker: "Sae",
   text: "Steven… I made it farther this time.",
-  portrait: "/anewgam/sae-adult.jpg",
+  portrait: asset("anewgam/sae-adult.jpg"),
 };
 
 const QUIET_LINE: Line = {
   speaker: "Quiet",
   text: "You keep assuming we all want to become her again.",
-  portrait: "/anewgam/frag-shy.jpg",
+  portrait: asset("anewgam/frag-shy.jpg"),
 };
 
 export class AnewgamGame {
@@ -259,7 +260,7 @@ export class AnewgamGame {
       this.line = {
         speaker: "Sae",
         text: "The ground is filled with little pieces of me…",
-        portrait: "/anewgam/sae-portrait.jpg",
+        portrait: asset("anewgam/sae-portrait.jpg"),
       };
       this.lineT = 6;
     }
