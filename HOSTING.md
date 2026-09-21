@@ -38,12 +38,22 @@ The image listens on **8088** so it never collides with Peachfall or Grok previe
 ## GitHub Pages
 
 Push to `main`. `.github/workflows/pages.yml` builds a static SPA with
-`VITE_BASE=/skyknight-raven/` and deploys it. The workflow turns Pages on
-(`configure-pages` enablement) so the first deploy can succeed.
+`VITE_BASE=/skyknight-raven/` and deploys it.
 
-If a run still 404s on “create deployment”, open
-[Settings → Pages](https://github.com/stevoblevo/skyknight-raven/settings/pages)
-and set **Source: GitHub Actions**, then re-run the workflow.
+GitHub will not let Actions turn Pages on by itself. One click, once:
+
+1. Open [Settings → Pages](https://github.com/stevoblevo/skyknight-raven/settings/pages)
+2. **Source: GitHub Actions**
+3. Re-run the **GitHub Pages** workflow (or push again)
+
+Until that is on, the live game is [skyknight-raven.vercel.app](https://skyknight-raven.vercel.app).
+
+## Container visibility
+
+The image publishes on every `main` push. First time, make it pullable without login:
+
+1. Open [the package](https://github.com/stevoblevo/skyknight-raven/pkgs/container/skyknight-raven)
+2. Package settings → Change visibility → **Public**
 
 ## Vercel
 

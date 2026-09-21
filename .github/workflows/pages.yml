@@ -51,8 +51,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Enable GitHub Pages
+        id: cfg
         uses: actions/configure-pages@v5
+        continue-on-error: true
         with:
           enablement: true
       - id: deployment
+        if: steps.cfg.outcome == 'success'
         uses: actions/deploy-pages@v4
