@@ -20,7 +20,8 @@ jobs:
     env:
       VITE_AUTH_ENABLED: "false"
       VITE_BASE: /skyknight-raven/
-      NITRO_PRESET: static
+      # node-server lets prerender finish without Nitro's static-env HTML crash.
+      NITRO_PRESET: node-server
       STATIC: "1"
     steps:
       - uses: actions/checkout@v4
