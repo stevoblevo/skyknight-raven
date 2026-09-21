@@ -1,0 +1,15 @@
+# Knight side only. Does not touch Peachfall / forest-mist-zest-civic.grok.me
+#
+#   docker compose up --build -d
+#   open http://tower.local:8088   (add 127.0.0.1 tower.local to /etc/hosts)
+services:
+  skyknight:
+    build: .
+    image: skyknight-raven:local
+    container_name: skyknight-raven
+    ports:
+      - "8088:8088"
+    restart: unless-stopped
+    environment:
+      VITE_AUTH_ENABLED: "false"
+      PORT: "8088"
