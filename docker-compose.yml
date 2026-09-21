@@ -1,11 +1,15 @@
 # Knight side only. Does not touch Peachfall / forest-mist-zest-civic.grok.me
 #
-#   docker compose up --build -d
-#   open http://tower.local:8088   (add 127.0.0.1 tower.local to /etc/hosts)
+# From this folder:
+#   docker compose up --build -d          # build locally
+#   docker compose pull && docker compose up -d   # use GHCR
+#
+# Then open http://tower.local:8088
+# (add `127.0.0.1 tower.local` to /etc/hosts)
 services:
   skyknight:
     build: .
-    image: skyknight-raven:local
+    image: ghcr.io/stevoblevo/skyknight-raven:latest
     container_name: skyknight-raven
     ports:
       - "8088:8088"
@@ -13,3 +17,16 @@ services:
     environment:
       VITE_AUTH_ENABLED: "false"
       PORT: "8088"
+      HOST: "0.0.0.0"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8088').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 25s

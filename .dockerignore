@@ -12,3 +12,9 @@ attachments
 .env.*
 AGENTS.md
 AGENTS.project.md
+public/peachfall
+src/components/peachfall
+README.md
+HOSTING.md
+LICENSE
+.github
